@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>NEET CBT Mock</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="top">
+  <span id="timer">03:00:00</span>
+</div>
+
+<div id="questionBox"></div>
+
+<div class="options" id="options"></div>
+
+<div class="nav">
+  <button onclick="prevQ()">Previous</button>
+  <button onclick="mark()">Mark for Review</button>
+  <button onclick="nextQ()">Next</button>
+</div>
+
+<button class="submit" onclick="submitTest()">Submit Test</button>
+
+<script src="script.js"></script>
+</body>
+</html>
