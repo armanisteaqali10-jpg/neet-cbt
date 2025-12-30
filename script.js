@@ -33,7 +33,7 @@ function prevQ(){ if(q>0){ q--; loadQ(); }}
 function submitTest(){
   let score = 0;
   questions.forEach((x,i)=>{
-    if(answers[i]==x.a) score+=4;
+    if(answers[i] == x.a) score += 4;
   });
 
   let name = prompt("Enter your name for the leaderboard:");
@@ -41,14 +41,19 @@ function submitTest(){
 
   let timeLeft = document.getElementById("timer").innerText;
 
-  let formUrl = "https://docs.google.com/forms/d/e/1FAIpQLSdt4QbbCFHnlz9duQ9LT2rj_arrnjUzhf4VjHWbTctxbDv_Tg/formResponse";
+  let url =
+    "https://docs.google.com/forms/d/e/1FAIpQLSdt4QbbCFHnlz9duQ9LT2rj_arrnjUzhf4VjHWbTctxbDv_Tg/formResponse" +
+    "?entry.1017886912=" + encodeURIComponent(name) +
+    "&entry.86745479=" + encodeURIComponent(score) +
+    "&entry.624537347=" + encodeURIComponent(timeLeft);
 
-  let submitUrl = `${formUrl}?entry.1017886912=${encodeURIComponent(name)}&entry.86745479=${encodeURIComponent(score)}&entry.624537347=${encodeURIComponent(timeLeft)}`;
+  // 🔥 RELIABLE SUBMISSION
+  let img = new Image();
+  img.src = url;
 
-  fetch(submitUrl, { method: "POST", mode: "no-cors" });
-
-  alert("Submitted!\nName: " + name + "\nScore: " + score);
+  alert("Test submitted successfully!\nScore: " + score);
 }
+
 
 // Timer code
 setInterval(()=>{
