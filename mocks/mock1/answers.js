@@ -6,6 +6,7 @@ window.mockAnswers = [
   "A",
   "A",
   "A",
-  'A"
+  "A",
+  "A"
 ];
 
